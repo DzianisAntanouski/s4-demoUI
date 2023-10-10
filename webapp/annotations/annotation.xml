@@ -1,0 +1,119 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/HTML5.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/API_SALESORGANIZATION_SRV/$metadata">
+        <edmx:Include Namespace="API_SALESORGANIZATION_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            
+            <Annotations Target="SAP.A_SalesOrganizationType/SalesOrganization">
+                <Annotation Term="Common.Label" String="{@i18n>organization}" />
+            </Annotations> 
+            <Annotations Target="SAP.A_SalesOrganizationType/CompanyCode">
+                <Annotation Term="Common.Label" String="{@i18n>companyCode}" />
+            </Annotations>
+            <Annotations Target="SAP.A_SalesOrganizationType/SalesOrganizationCurrency">
+                <Annotation Term="Common.Label" String="{@i18n>currency}" />
+            </Annotations>
+             <Annotations Target="SAP.A_SalesOrganizationType/IntercompanyBillingCustomer">
+                <Annotation Term="Common.Label" String="{@i18n>billingCustomer}" />
+            </Annotations>
+              
+
+            <Annotations Target="SAP.A_SalesOrganizationType">  
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="{@i18n>appTitle}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>salesOrganizations}"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="CompanyCode"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>            
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="{@i18n>organization}"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="25rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                            <PropertyValue Property="Label" String="{@i18n>companyCode}"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="15rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SalesOrganizationCurrency"/>
+                            <PropertyValue Property="Label" String="{@i18n>currency}"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="15rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="IntercompanyBillingCustomer"/>
+                            <PropertyValue Property="Label" String="{@i18n>billingCustomer}"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="15rem" />
+                                </Record>
+                            </Annotation>
+                        </Record>   
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="name">
+                    <Record Type="UI.FieldGroupType">
+                    <Annotation Term="HTML5.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="25rem" />
+                                </Record>
+                            </Annotation>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="to_Text/SalesOrganizationName"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesOrganization"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SalesOrganization</PropertyPath>
+                            <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>SalesOrganizationCurrency</PropertyPath>
+                        <PropertyPath>IntercompanyBillingCustomer</PropertyPath>
+                    </Collection>
+                </Annotation>
+                
+            </Annotations>
+            
+            
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

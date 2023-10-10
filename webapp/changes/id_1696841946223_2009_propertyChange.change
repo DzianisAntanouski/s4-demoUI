@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1696841946223_2009_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "saless4",
+    "packageName": "",
+    "content": {
+        "property": "fitContainer",
+        "newValue": false
+    },
+    "selector": {
+        "id": "saless4::sap.suite.ui.generic.template.ListReport.view.ListReport::A_SalesOrganization--listReport",
+        "idIsLocal": false,
+        "type": "sap.ui.comp.smarttable.SmartTable"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/saless4/changes/",
+    "projectId": "",
+    "creation": 1696841958595,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.84.7",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
